@@ -33,7 +33,6 @@ header {
 
 nav {
   grid-area: nav;
-  background-color: yellow;
 }
 
 main {
@@ -48,3 +47,99 @@ main > * {
 }
 
 /* Main END */
+
+.btn {
+  color: var(--clr, dodgerblue);
+
+  border: none;
+  outline: 1px solid var(--clr, dodgerblue);
+  border-radius: 0.3em;
+
+  cursor: pointer;
+
+  width: 2.5rem;
+  font-size: 1.2rem;
+
+  margin: 0.12em;
+
+  display: grid;
+  place-content: center;
+
+  transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
+}
+
+.btn:hover {
+  color: white;
+  background-color: var(--clr, dodgerblue);
+}
+
+.empty {
+  flex: 1;
+
+  display: grid;
+  place-content: center;
+
+  font-style: italic;
+  color: gray;
+}
+
+.color-bar {
+  height: 100%;
+  min-width: 1em;
+  background-color: var(--color, green);
+}
+
+.center {
+  flex: 1;
+
+  display: grid;
+  place-content: center;
+}
+
+.not-specified {
+  font-style: italic;
+  color: gray;
+}
+
+#delete-dialog {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+
+  border: none;
+  border-radius: 1em;
+
+  padding: 1.4em;
+
+  /* display: flex; */
+  flex-direction: column;
+  gap: 1em;
+
+  box-shadow: 2px 4px 8px 3px hsla(0, 0%, 55%, 0.2),
+    1px 6px 20px 3px hsla(0, 0%, 55%, 0.19);
+}
+
+#delete-dialog[open] {
+  display: flex;
+}
+
+#delete-dialog .btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1em;
+}
+
+#delete-dialog .btn-container .btn {
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5em;
+}
+
+.cancel {
+  --clr: hsl(0, 0%, 75%);
+}
+
+.delete {
+  --clr: crimson;
+}

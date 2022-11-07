@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/header.css" />
     <link rel="stylesheet" href="./css/spinner.css" />
     <link rel="stylesheet" href="./css/search.css" />
+    <link rel="stylesheet" href="./css/nav.css" />
+    <link rel="stylesheet" href="./css/favorites.css" />
 
     <script src="./js/index.js" type="module"></script>
   </head>
@@ -35,9 +37,22 @@
         </div>
       </div>
     </header>
-    <nav></nav>
+    <nav>
+      <div class="nav-link active">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div class="nav-link"><i class="fa-regular fa-heart"></i></div>
+    </nav>
     <main>
-      <div id="search-results" class="active">
+      <dialog id="delete-dialog">
+        <h1>Are you sure?</h1>
+        <p>If you really want to delete this cocktail press delete.</p>
+        <div class="btn-container">
+          <button class="btn cancel">Cancel</button>
+          <button class="btn delete">Delete</button>
+        </div>
+      </dialog>
+      <div id="search-results">
         <div class="results">
           <div class="loading">
             <div class="spinner">
@@ -67,8 +82,87 @@
                   </div>
                 </div>
               </li>
+              <div class="empty">Nothing found!</div>
             </ul>
-            <div class="empty">Nothing found!</div>
+          </div>
+        </div>
+        <div class="details">
+          <div id="content">
+            <header>
+              <button id="close-content-btn">
+                <i class="fa-solid fa-x"></i>
+              </button>
+              <span class="title">Cocktail</span>
+            </header>
+            <section>
+              <div class="img-wrapper">
+                <img
+                  src="https://www.thecocktaildb.com/images/media/drink/u736bd1605907086.jpg"
+                />
+                <button id="toggle-favorite-btn">
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <h1>Ingredients</h1>
+              <ul class="section-content">
+                <li class="ingredient">
+                  <h2>Beer</h2>
+                  <p>4 oz</p>
+                </li>
+                <li class="ingredient">
+                  <h2>Tomato Juice</h2>
+                  <p>4 oz</p>
+                </li>
+                <li class="ingredient">
+                  <h2>Lime Juice</h2>
+                  <p>1 tblsp</p>
+                </li>
+                <li class="ingredient">
+                  <h2>Hot Sauce</h2>
+                  <p>Dash</p>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <button id="remove-drink-btn" class="btn">Delete</button>
+          <div class="placeholder empty">Select something to start !</div>
+        </div>
+      </div>
+      <div id="favorites-page" class="active">
+        <div class="favorites">
+          <div class="loading">
+            <div class="spinner">
+              Loading
+              <div class="spinner-sector"></div>
+              <div class="spinner-sector"></div>
+              <div class="spinner-sector"></div>
+            </div>
+          </div>
+          <div class="content">
+            <header>
+              <h1>Favorite cocktails</h1>
+              <button id="clear-favorites-btn" class="btn">Clear All</button>
+            </header>
+            <ul id="favorites-list">
+              <li class="favorite">
+                <div class="color-bar"></div>
+                <div class="favorite-content">
+                  <img
+                    src="https://www.thecocktaildb.com/images/media/drink/u736bd1605907086.jpg"
+                  />
+                  <div class="left">
+                    <div class="wrapper">
+                      <span class="name"> Michelada </span>
+                      <span class="type"> Cocktail </span>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                </div>
+              </li>
+              <div class="empty">You have no favorites!</div>
+            </ul>
           </div>
         </div>
         <div class="details">
