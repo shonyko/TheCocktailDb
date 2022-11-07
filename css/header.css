@@ -1,0 +1,144 @@
+.container {
+  position: absolute;
+  inset: 0;
+
+  isolation: isolate;
+
+  display: grid;
+  grid-template-areas:
+    ". . . . ."
+    ". . . . ."
+    "logo . bar . ."
+    ". . . . .";
+  grid-template-rows: 0 0 1fr 0;
+  grid-template-columns: 1fr 2fr 3fr 2fr 1fr;
+
+  background-color: white;
+  box-shadow: 0px 2px 3px 0px gray;
+}
+
+#logo {
+  grid-area: logo;
+  height: 3.5rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1em;
+
+  padding: 0 0.5em;
+
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+#logo i {
+  color: yellowgreen;
+  font-size: 1.7rem;
+
+  transition: scale 1000ms ease-in-out;
+}
+
+#search-bar {
+  grid-area: bar;
+  height: 3.5rem;
+
+  width: calc(min(35em, 50vw));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.15rem;
+}
+
+#search-bar .wrapper {
+  width: 100%;
+  height: 65%;
+
+  border-radius: 0.9em;
+  box-shadow: 0px 0px 0.2em 1px gray;
+
+  font-size: inherit;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: white;
+}
+
+#search-bar .wrapper > * {
+  height: 100%;
+}
+
+#search-bar input {
+  flex: 1;
+
+  padding: 0.4em 0.7em;
+
+  border: none;
+  outline: none;
+  border-radius: inherit;
+
+  font-size: inherit;
+}
+
+#search-bar .select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+
+  min-width: 5em;
+
+  box-shadow: 0px 0px 2px 0px gray;
+}
+
+#search-bar select {
+  flex: 1;
+  height: 100%;
+
+  border: 0;
+  outline: 0;
+
+  text-align-last: center;
+
+  cursor: pointer;
+
+  transition: background-color 250ms ease-in-out;
+}
+
+#search-bar select:is(:hover, :focus) {
+  background-color: hsl(0 0% 70% / 0.5);
+}
+
+#search-bar #search-btn {
+  display: grid;
+  place-content: center;
+
+  padding: 0 0.7em;
+
+  cursor: pointer;
+
+  transition: background-color 250ms ease-in-out;
+}
+
+#search-bar #search-btn:is(:hover, :focus) {
+  background-color: hsl(0, 0%, 85%);
+}
+
+/* INIT */
+.init header {
+  position: unset;
+}
+
+.init .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TheCocktailDb</title>
+
+    <link href="./font-awesome/css/fontawesome.css" rel="stylesheet" />
+    <link href="./font-awesome/css/brands.css" rel="stylesheet" />
+    <link href="./font-awesome/css/solid.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/spinner.css" />
+    <link rel="stylesheet" href="./css/search.css" />
+
+    <script src="./js/index.js" type="module"></script>
+  </head>
+  <body class="init">
+    <header>
+      <div class="container">
+        <div id="logo"><i class="fa-brands fa-envira"></i>TheCocktailDb</div>
+        <div id="search-bar">
+          <div class="wrapper">
+            <input class="search-input" type="text" />
+            <div class="select-container">
+              <select class="search-filter">
+                <option value="1">by name</option>
+                <option value="2">by ingredient</option>
+                <option value="3">by id</option>
+              </select>
+            </div>
+            <span id="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav></nav>
+    <main>
+      <div id="search-results" class="active">
+        <div class="results">
+          <div class="loading">
+            <div class="spinner">
+              Loading
+              <div class="spinner-sector"></div>
+              <div class="spinner-sector"></div>
+              <div class="spinner-sector"></div>
+            </div>
+          </div>
+          <div class="content">
+            <h1>Results</h1>
+            <ul id="result-list">
+              <li class="result">
+                <div class="color-bar"></div>
+                <div class="result-content">
+                  <img
+                    src="https://www.thecocktaildb.com/images/media/drink/u736bd1605907086.jpg"
+                  />
+                  <div class="left">
+                    <div class="wrapper">
+                      <span class="name"> Michelada </span>
+                      <span class="type"> Cocktail </span>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="empty">Nothing found!</div>
+          </div>
+        </div>
+        <div class="details">
+          <div id="content">
+            <header>
+              <button id="close-content-btn">
+                <i class="fa-solid fa-x"></i>
+              </button>
+              <span class="title">Cocktail</span>
+            </header>
+            <section>
+              <div class="img-wrapper">
+                <img
+                  src="https://www.thecocktaildb.com/images/media/drink/u736bd1605907086.jpg"
+                />
+                <button id="toggle-favorite-btn">
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <h1>Ingredients</h1>
+              <ul class="section-content">
+                <li class="ingredient">
+                  <h2>Beer</h2>
+                  <p>4 oz</p>
+                </li>
+                <li class="ingredient">
+                  <h2>Tomato Juice</h2>
+                  <p>4 oz</p>
+                </li>
+                <li class="ingredient">
+                  <h2>Lime Juice</h2>
+                  <p>1 tblsp</p>
+                </li>
+                <li class="ingredient">
+                  <h2>Hot Sauce</h2>
+                  <p>Dash</p>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <button id="remove-drink-btn" class="btn">Delete</button>
+          <div class="placeholder empty">Select something to start !</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

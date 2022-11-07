@@ -1,0 +1,47 @@
+.spinner {
+    width: 200px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.spinner-sector {
+    mix-blend-mode: multiply;
+    position: absolute;
+    inset: 0;
+    border: .5em solid transparent;
+    border-radius: 50%;
+    animation: spinner var(--duration, 1.5s) var(--timing, ease-in-out) infinite;
+}
+
+.spinner-sector:first-child {
+    --duration: 2s;
+    --timing: ease-in-out;
+    border-left-color: #D7EBBA;
+}
+
+.spinner-sector:nth-child(2) {
+    --duration: 3s;
+    --timing: ease-out;
+    border-top-color: #EBD494;
+}
+
+.spinner-sector:last-child {
+    --duration: 5s;
+    --timing: ease-in;
+    border-right-color: #9AD2CB;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
